@@ -1,0 +1,64 @@
+{
+  "name": "node-wit",
+  "version": "1.1.0",
+  "private": false,
+  "homepage": "https://github.com/wit-ai/node-wit",
+  "description": "Node module to request Wit.AI",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wit-ai/node-wit"
+  },
+  "bugs": {
+    "url": "https://github.com/wit-ai/node-wit/issues"
+  },
+  "keywords": [
+    "wit",
+    "automation",
+    "home",
+    "siri",
+    "wit.ai",
+    "nlp",
+    "speech",
+    "intent",
+    "jarvis"
+  ],
+  "author": {
+    "name": "Olivier Vaussy",
+    "email": "oliv@wit.ai"
+  },
+  "scripts": {
+    "test": "node_modules/mocha/bin/_mocha test/*_test.js --ignore-leaks -t 20000 --reporter spec"
+  },
+  "dependencies": {
+    "request": "2.42.0",
+    "underscore": "1.7.0"
+  },
+  "devDependencies": {
+    "mocha": "1.21.4",
+    "nock": "0.47.0",
+    "chai": "1.9.1"
+  },
+  "main": "./index.js",
+  "gitHead": "d5c640480e1a8fc4f9f6d692ff6c5c9adae8b2fb",
+  "_id": "node-wit@1.1.0",
+  "_shasum": "27af50aaa6006988784aa200b8a2757cf1c7ea35",
+  "_from": "node-wit@1.1.0",
+  "_npmVersion": "1.4.16",
+  "_npmUser": {
+    "name": "oliviervaussy",
+    "email": "oliv@wit.ai"
+  },
+  "maintainers": [
+    {
+      "name": "oliviervaussy",
+      "email": "oliv@wit.ai"
+    }
+  ],
+  "dist": {
+    "shasum": "27af50aaa6006988784aa200b8a2757cf1c7ea35",
+    "tarball": "http://registry.npmjs.org/node-wit/-/node-wit-1.1.0.tgz"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/node-wit/-/node-wit-1.1.0.tgz",
+  "readme": "ERROR: No README data found!"
+}
