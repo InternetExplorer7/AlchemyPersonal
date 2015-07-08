@@ -10,6 +10,7 @@
 
   </head>
   <body>
+    <center><img src='loading.gif' id='loading'/></center>
     <nav>
       <ul id='inner'>
         <li>homepage</li>
@@ -27,15 +28,24 @@
 
       </div>
 
+      <div id='loginform'>
+        <form id='loginuser'>
+          <h2>Login</h2>
+          <input id='usern' type='text' placeholder='enter a username'/>
+          <input id='passw' type='password' placeholder='enter a password'/>
+          <input type='submit' value='Login'/>
+        </form>
+      </div>
+
       <div id='form'>
         <form id='target'>
           <h2>Register</h2>
          <input id='username' type='text' placeholder='enter a username'/>
-          <input id='password' type='text' placeholder='enter a password'/>
+          <input id='password' type='password' placeholder='enter a password'/>
           <input id='first' type='text' placeholder='enter first name (optional)'/>
           <input id='last' type='text' placeholder='enter last name (optional)'/>
-          <input id='email' type='text' placeholder='enter email address'/>
-          <input type='submit'/>
+          <input id='email' type='text' placeholder='enter email address (optional)'/>
+          <input type='submit' value='Register'/>
         </form> <!-- On submit, insert new table -->
       </div>
 
@@ -53,7 +63,7 @@
           <h1>Your Profile</h1>
 
         </div>
-     
+
   </body>
   <script src='main.js'></script>
 </html>

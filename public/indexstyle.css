@@ -80,6 +80,37 @@ a{
   border: 2px solid white;
 }
 
+/* SIGN IN */
+
+#loginform{
+  height: 100%;
+  width: 100%;
+  background-color: #c64747;
+}
+#loginuser{
+  width: 30%;
+  height: 50%;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  top:10%;
+  color: white;
+}
+#loginuser input{
+  font-size: 19px;
+  border: none;
+  padding: 15px;
+  margin: 5px;
+  width: 100%;
+  box-sizing: border-box;
+}
+#loginuser h2{
+  margin: 0;
+  font-style: italic;
+  font-size:31px;
+  padding-bottom: 40px;
+}
+
 
 /* #FORM SIGN UP PAGE */
 
@@ -109,6 +140,7 @@ a{
   margin: 0;
   font-style: italic;
   font-size:31px;
+  padding-bottom: 40px;
 }
 
 /* WRITE ABOUT YOURSELF */
