@@ -52,8 +52,33 @@ MongoClient.connect('MongoDB connection string', function(err, db){
 		socket.on('register', function(username, password, first, last, email, callback){
 			var auth = Math.round(new Date().getTime()/1000.0)
 			db.collection('users').insert({_id: auth, username: username, password: password, first: first, last: last, email: email, interests: []});
-			callback(auth);
+			db.collection('users').findOne({username: username}, function(err, doc){
+				if(doc === null){
+					callback(auth, true);
+				}
+				else{
+					callback(auth, false);
+				}
+			});
 		}); // register
+
+		socket.on('login', function(username, password, callback){
+					db.collection('users').findOne({username: username}, function(err, doc){
+						if(doc === null){
+							console.log('false');
+							callback(false, doc._id);
+
+						}
+						else if(doc.password === password){
+							console.log('true');
+							callback(true, doc._id);
+						}
+						else{
+							console.log('password mismatch');
+							callback(false, doc._id);
+						}
+					});
+		});
 		socket.on('process', function(text, auth){
 	alchemyapi.entities('text', text,{ 'sentiment':1 }, function(response) {
 		console.log(response);
@@ -64,6 +89,11 @@ MongoClient.connect('MongoDB connection string', function(err, db){
 			find(auth);
 			}); // AlchemyAPI callback
 		}); // process
+
+		socket.on('get', function(id){
+			console.log('got to get');
+			find(id);
+		}); // get
 
 			function find(id){
 				setTimeout(function(){
@@ -77,5 +107,4 @@ MongoClient.connect('MongoDB connection string', function(err, db){
 
 
 }); // MongoDB
-
 
