@@ -49,9 +49,9 @@ MongoClient.connect('MongoDB connection string', function(err, db){
 
 	console.log("Got to callback");
 	io.on('connection', function(socket){
-		socket.on('register', function(username, password, first, last, email, phone, callback){
+		socket.on('register', function(username, password, first, last, email, callback){
 			var auth = Math.round(new Date().getTime()/1000.0)
-			db.collection('users').insert({_id: auth, username: username, password: password, first: first, last: last, email: email, phone: phone, interests: []});
+			db.collection('users').insert({_id: auth, username: username, password: password, first: first, last: last, email: email, interests: []});
 			callback(auth);
 		}); // register
 		socket.on('process', function(text, auth){
@@ -77,4 +77,5 @@ MongoClient.connect('MongoDB connection string', function(err, db){
 
 
 }); // MongoDB
+
 
