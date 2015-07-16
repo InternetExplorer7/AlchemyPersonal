@@ -43,6 +43,7 @@ nav li a{
 }
 nav li:nth-child(1){
   font-size: 28px;
+  padding-top: 7px;
 }
 nav li:nth-child(n+2){
   margin: 4px;
