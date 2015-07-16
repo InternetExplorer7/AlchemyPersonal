@@ -1,0 +1,79 @@
+<!doctype html>
+<!--
+  Material Design Lite
+  Copyright 2015 Google Inc. All rights reserved.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+      https://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License
+-->
+<html lang="en">
+  <head>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.8.0.min.js"></script>  
+     <script src="https://apis.google.com/js/client.js?onload=onJSClientLoad"></script>
+    <script src='http://' + location.hostname + ':3000/socket.io/socket.io.js'></script>
+    <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Homepage</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <link rel="stylesheet" href="material.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+    </style>
+  </head>
+  <script>
+    var socket = io();
+    if(localStorage.getItem('uid') === null){
+    window.location.replace("index.html");
+  }
+  socket.emit('get', parseInt(localStorage.getItem('uid')));
+  </script>
+  <body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
+    <div class="mdl-layout mdl-js-layout mdl-layout">
+      <nav>
+        <ul id='inner'>
+          <li>homepage</li>
+          <li><a href="mailto:kkhorram@gmail.com">contact us</a></li>
+          <li><a href="write.html">write</a></li>
+        </ul>
+      </nav>
+      <main class="mdl-layout__content">
+        <div class="mdl-layout__tab-panel is-active" id="overview">
+          <!--               CARDS                    -->
+          <section class="section--footer mdl-color--white mdl-grid">
+            <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
+              <div class="section__circle-container__circle mdl-color--accent section__circle--big"></div>
+            </div>
+            <div class="section__text mdl-cell mdl-cell--4-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+              <h5>Want to write more?</h5>
+              Simply click <a href='write.html'>this</a> button so I can know more about your interests.
+            </div>
+            <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
+              <div class="section__circle-container__circle mdl-color--accent section__circle--big"></div>
+            </div>
+            <div class="section__text mdl-cell mdl-cell--4-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+              <h5>Get in contact</h5>
+              What do you think? click <a href='mailto:kkhorram@gmail.com'>here</a> to send me your feedback!
+            </div>
+          </section>
+        </div>
+
+      </main>
+    </div>
+        <script src="main.js"></script>
+    <script src="material.min.js"></script>
+  </body>
+</html>

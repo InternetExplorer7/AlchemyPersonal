@@ -10,6 +10,11 @@
     <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
 
   </head>
+  <script>
+  if(localStorage.getItem('uid') !== null){
+    window.location.replace("profile.html");
+  }
+  </script>
   <body>
     <nav>
       <ul id='inner'>
@@ -17,13 +22,13 @@
         <li>contact us</li>
       </ul>
     </nav>
-    <div id='pageone'>
-        <div class='pageinner'>
-        <h1>Your ideas and interests coming together.</h1>
-        <p>Homepage uses your interests to create the most personalized AI tailored specifically for you.</p>
-        <a href="login.html" id='signin'>Log In</a>
-        <a href="register.html" id='register'>Register</a>
-        </div>
+      <div id='loginform'>
+        <form id='loginuser'>
+          <h2>Login</h2>
+          <input id='usern' type='text' placeholder='enter a username'/>
+          <input id='passw' type='password' placeholder='enter a password'/>
+          <input type='submit' value='Login'/>
+        </form>
       </div>
 
   </body>

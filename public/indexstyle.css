@@ -3,10 +3,10 @@ html,body{
   padding: 0;
   width: 100%;
   height: 100%;
-  font-family: Futura;
+  font-family: Arial;
 }
 nav{
-  height: 10%;
+  height: 60px;
 }
 nav ul{
   font-family: futura;
@@ -14,8 +14,7 @@ nav ul{
   width: 70%;
   margin: 0 auto;
   padding-left: 0;
-  position: relative;
-  top: 10px;
+  padding: 10px;
 }
 nav li{
   display: inline-block;
@@ -37,7 +36,6 @@ nav li:nth-child(2){
   width: 100%;
 }
 .pageinner{
-  font-family: Futura;
   color: white;
   text-align: center;
   position: relative;
